@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+    <%= csrf_meta_tags %>
+<!-- Rails 提供的 csrf_meta_tags 方法，作用是避免跨站请求伪造(Cross-Site Request Forgery，简称 CSRF，一种恶意网络攻击)。 -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <!-- 这行代码的作用是，把每个页面的内容插入布局中。没必要了解它的具体实现过程，我们只需知道，在布局 中使用这行代码后，访问 /static_pages/home 时会把 home.html.erb 中的内容转换成 HTML，然后插入 <%= yield %> 所在的位置。 -->
+  </body>
+</html>
