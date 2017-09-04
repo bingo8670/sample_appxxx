@@ -9,7 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
-    <!-- 这行代码的作用是，把每个页面的内容插入布局中。没必要了解它的具体实现过程，我们只需知道，在布局 中使用这行代码后，访问 /static_pages/home 时会把 home.html.erb 中的内容转换成 HTML，然后插入  yield  所在的位置。 -->
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "sample app", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",    '' %></li>
+            <li><%= link_to "Help",    '' %></li>
+            <li><%= link_to "Log in",  '' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+      <!-- 这行代码的作用是，把每个页面的内容插入布局中。没必要了解它的具体实现过程，我们只需知道，在布局 中使用这行代码后，访问 /static_pages/home 时会把 home.html.erb 中的内容转换成 HTML，然后插入  yield  所在的位置。 -->
+    </div>
   </body>
 </html>
