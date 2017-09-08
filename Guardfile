@@ -1,6 +1,7 @@
 # Defines the matching rules for Guard.
 guard :minitest, spring: true, all_on_start: false do
   # 这行会让 Guard 使用 Rails 提供的 Spring 服务器减少加载时间，而且启动时不运行整个测试组件。
+  
   watch(%r{^test/(.*)/?(.*)_test\.rb$})
   watch('test/test_helper.rb') { 'test' }
   watch('config/routes.rb') { integration_tests }
